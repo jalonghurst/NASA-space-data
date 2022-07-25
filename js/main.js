@@ -4,9 +4,17 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
 .then (res => res.json())
 .then(data => {
     console.log(data)
+    if(data.media_type === 'image') {
     document.querySelector('#title').innerText = data.title
     document.querySelector('img').src = data.hdurl
     document.querySelector('h3').innerText = data.explanation
+    document.querySelector('.apod').classList.toggle('hidden');
+        document.querySelector('.apod-video').classList.add('hidden');
+    } else if (data.media_type === 'video') {
+        document.querySelector('iframe').src = data.url
+        document.querySelector('.apod').classList.add('hidden');
+        document.querySelector('.apod-video').classList.toggle('hidden');
+    }
 })
 .catch(err => {
     console.log(`error ${err}`)
@@ -24,9 +32,17 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
         .then (res => res.json())
         .then(data => {
             console.log(data)
+            if(data.media_type === 'image') {
             document.querySelector('#title').innerText = data.title
             document.querySelector('img').src = data.hdurl
             document.querySelector('h3').innerText = data.explanation
+            document.querySelector('.apod').classList.toggle('hidden');
+                document.querySelector('.apod-video').classList.add('hidden');
+            } else if (data.media_type === 'video') {
+                document.querySelector('iframe').src = data.url
+                document.querySelector('.apod').classList.add('hidden');
+                document.querySelector('.apod-video').classList.toggle('hidden');
+            }
         })
         .catch(err => {
             console.log(`error ${err}`)
