@@ -45,9 +45,7 @@ header {
 }
 
 nav {
-
   height: 100%;
-
 }
 
 ul {
@@ -109,5 +107,11 @@ h3 {
 @media (min-width: 800px) {
   img {
     max-width: 1500px;
+  }
+}
+
+@media (max-width: 600px) {
+  h3  {
+    font-size: 3rem;
   }
 }
