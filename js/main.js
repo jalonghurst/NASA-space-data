@@ -6,8 +6,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
     console.log(data)
     if(data.media_type === 'image') {
     document.querySelector('#title').innerText = data.title
-    document.querySelector('img').src = data.hdurl
-    document.querySelector('h3').innerText = data.explanation
+    document.querySelector('#apod-img').src = data.hdurl
+    document.querySelector('#apod-description').innerText = data.explanation
     document.querySelector('.apod').classList.toggle('hidden');
         document.querySelector('.apod-video').classList.add('hidden');
     } else if (data.media_type === 'video') {
