@@ -31,18 +31,23 @@ h1 {
 
 }
 
-h2 {
+h2, p {
   padding: 2%;
   font-size: 1.6rem;
   text-align: justify;
   
 }
 
+.indent {
+  padding-left: 5%;
+}
+
+
 .hidden {
   display: none;
 }
 /******************************************
-/* LAYOUT
+/* LAYOUT / SECTIONS
 /*******************************************/
 .white-card {
   background: -webkit-linear-gradient(to right, #eef0f3, #fbfdff);  /* Chrome 10-25, Safari 5.1-6 */
