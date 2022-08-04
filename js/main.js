@@ -52,10 +52,6 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
 
 
 // Mars Rover API 
-
-
-
-
 document.querySelector("#mr-button").addEventListener("click", function() {
     let datePicker = document.getElementById("mr-date");
     let date = datePicker.value;
@@ -71,13 +67,11 @@ document.querySelector("#mr-button").addEventListener("click", function() {
     {
       roverNamed = "curiosity";
       datePicker.min = "2012-08-06";
-    }
-    else if(buttonStatus2 === true)
+    } else if(buttonStatus2 === true)
     {
       roverNamed = "opportunity";
       datePicker.min = "2004-01-25";
-    }
-    else if (buttonStatus3 === true)
+    } else if (buttonStatus3 === true)
     {
       roverNamed = "spirit";
       datePicker.min = "2004-01-04";
@@ -85,12 +79,9 @@ document.querySelector("#mr-button").addEventListener("click", function() {
 
     
     const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverNamed}/photos?earth_date=${date}&api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtOULzadunDcHT`;
-    console.log(url, roverNamed)
-
     fetch(url)
     .then (res => res.json())
     .then(data => {
-        console.log(data, url)
         let image = data.photos[0].img_src;
         let sol = data.photos[0].sol;
         let cameraName = data.photos[0].camera.full_name;
