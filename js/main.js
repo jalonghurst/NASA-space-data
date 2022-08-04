@@ -21,7 +21,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
 });
 
 //The user will enter a date. Use that date to get the NASA picture of the day from that date! https://api.nasa.gov/
- document.querySelector('button').addEventListener('click', getFetch)
+ document.querySelector('#apod-button').addEventListener('click', getFetch)
 
  function getFetch() {
     const choice = document.querySelector('input').value
@@ -81,7 +81,7 @@ document.querySelector("#mr-button").addEventListener("click", function() {
         // document.querySelector('.apod-video').classList.add('hidden'); 
     })
     .catch(err => {
-        let error = "Sorry, there are no photos on this date! Pick another.";
+        let error = "Sorry, there are no photos avaliable on this date! Pick another.";
         document.querySelector("#mr-description").innerHTML = error;
         document.querySelector('.mr').classList.add('hidden');
         console.log(`error ${err}`)

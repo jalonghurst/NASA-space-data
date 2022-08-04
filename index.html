@@ -25,6 +25,7 @@
 			</ul>
 		    </nav>
 		</header>
+		<!-- APOD Section -->
 		<section id="apod" class="blue-card">		
 		</section>
 		<section class="apod-photo-header">
@@ -40,7 +41,7 @@
 			<h2> View todays featured photo below.</h2>
 			<h2> Previous submissions can also be viewed, access the database by filtering with DD/MM/YYYY below</h2>
 			<input type="date" name="" value="">
-			<button type="button" name="button">Get Media</button>
+			<button id='apod-button' type="button" name="button">Get Media</button>
 			<h2 id="title"></h2>
 		
 			<img id='apod-img' class="apod hidden" src="" alt="">
@@ -59,20 +60,56 @@
 		</section>
 		<!-- Mars Rover Form -->
 		<section class="white-card">
-			<h2> View todays featured photo below.</h2>
-			<h2> Previous submissions can also be viewed, access the database by filtering with DD/MM/YYYY below</h2>
+			<p> View todays featured photo below.</p>
+			<p> Access the database and view previous submissions by filtering via the date input below</p>
 			<p>Most rovers did not start taking photos until several days after landing.</p>
 				<p class="indent">Curiosity landed on: 2012-08-06.</p>
 				<p class="indent">Opportunity landed on: 2004-01-25.</p>
 				<p class="indent">Spirit landed on: 2004-01-04.</p>
 			<input id="mr-date" type="date" name="" value="">
 			<button id="mr-button" type="button" name="button">Get Media</button>
+			<form>
+			<input type="radio" id="curiousity" name="mars_rover" value="Curiousity">
+			  <label for="curiousity">Curiousity</label><br>
+			  <input type="radio" id="opportunity" name="mars_rover" value="Opportunity">
+			  <label for="opportunity">Opportunity</label><br>
+			  <input type="radio" id="spirit" name="mars_rover" value="Spirit">
+			  <label for="spirit">Spirit</label>
+			</form>
 			<h2 id="title"></h2>
 		
 			<img id='mr-img' class="mr hidden" src="" alt="">
 			<!-- <iframe class="apod-video hidden" src="" frameborder="0" width="100%" height="500px"></iframe> -->
 			<h3 id="mr-description"></h3>
 		</section>
-		<script type="text/javascript" src="js/main.js"></script>
+
+
+		<!-- NASA Image and Video Library Section-->
+
+		<section id="apod" class="blue-card">		
+		</section>
+		<section class="apod-photo-header">
+			<div class="card">
+				<h3 class="card-txt">NASA Astronomy Picture of the Day</h3>
+			</div>
+		</section>
+		<section class="blue-card">
+				<h2> Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</h2>
+				
+		</section>
+
+		<section class="white-card">
+			<h2> View todays featured photo below.</h2>
+			<h2> Previous submissions can also be viewed, access the database by filtering with DD/MM/YYYY below</h2>
+			<label for="site-search">Search the site:</label>
+			<input type="search" id="site-search" name="q">
+			<button type="button" name="button">Get Media</button>
+			<h2 id="title"></h2>
+			
+			<img id='apod-img' class="apod hidden" src="" alt="">
+			<iframe class="apod-video hidden" src="" frameborder="0" width="100%" height="500px"></iframe>
+			<h3 id="apod-description"></h3>
+		</section>
+	<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
