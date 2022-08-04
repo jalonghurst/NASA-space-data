@@ -73,7 +73,9 @@ document.querySelector("#mr-button").addEventListener("click", function() {
         let text = `The image below was taken by the ${cameraName} on the ${roverName} rover on Martian sol ${sol}.`;
         console.log(data.status);
         // document.querySelector('#title').innerText = data.title
+        
         document.querySelector("#mr-img").src = image;
+        document.querySelector('.mr').classList.toggle('hidden');
         document.querySelector("#mr-description").innerHTML = text;
         // document.querySelector('.apod').classList.toggle('hidden');
         // document.querySelector('.apod-video').classList.add('hidden'); 
@@ -81,6 +83,7 @@ document.querySelector("#mr-button").addEventListener("click", function() {
     .catch(err => {
         let error = "Sorry, there are no photos on this date! Pick another.";
         document.querySelector("#mr-description").innerHTML = error;
+        document.querySelector('.mr').classList.add('hidden');
         console.log(`error ${err}`)
     });
 
