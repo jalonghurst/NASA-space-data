@@ -67,6 +67,7 @@ h2 {
 
 /* NAVIGATION */
 header {
+  z-index: 1;
   background: -webkit-linear-gradient(to right, #eef0f3, #fbfdff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #fdfeff, #fbfcfd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
   width: 100%;
