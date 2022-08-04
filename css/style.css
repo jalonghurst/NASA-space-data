@@ -180,7 +180,19 @@ ul {
   font-size: 5rem;
 }
 
+/* NASA IMAGE AND VIDEO LIBRARY */
 
+.nivl-photo-header {
+  background-image: url('..//Orions\ Belt.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: #fdfeff;
+}
 
 /******************************************
 /* ADDITIONAL STYLES/ MEDIA QUERIES
