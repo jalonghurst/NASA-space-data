@@ -104,3 +104,36 @@ document.querySelector("#mr-button").addEventListener("click", function() {
     });
 
 });
+
+// NASA Image And Video Library
+
+document.querySelector('#hivl-button').addEventListener('click', getFetchNivl)
+
+ function getFetchNivl() {
+    const search = document.querySelector('#search').value
+    console.log(search)
+    const url = `https://images-api.nasa.gov/search?q=${search}`
+    
+    fetch(url)
+        .then (res => res.json())
+        .then(data => {
+            console.log(data)
+            // if(data.media_type === 'image') {
+                // FIND RIGHT TARGET FOR TITLE
+            document.querySelector('#nivl-title').innerText = data.title
+            // document.querySelector('#apod-img').src = data.hdurl
+            // document.querySelector('#apod-description').innerText = data.explanation
+            // document.querySelector('.apod').classList.toggle('hidden');
+            //     document.querySelector('.apod-video').classList.add('hidden');
+            // } 
+            // else if (data.media_type === 'video') {
+            //     document.querySelector('iframe').src = data.url
+            //     document.querySelector('.apod').classList.add('hidden');
+            //     document.querySelector('.apod-video').classList.toggle('hidden');
+            // }
+        })
+        .catch(err => {
+            console.log(`error ${err}`)
+        });
+
+}
