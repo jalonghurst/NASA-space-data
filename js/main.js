@@ -120,7 +120,8 @@ document.querySelector('#hivl-button').addEventListener('click', getFetchNivl)
             console.log(data)
             // if(data.media_type === 'image') {
                 // FIND RIGHT TARGET FOR TITLE
-            document.querySelector('#nivl-title').innerText = data.title
+            document.querySelector('#nivl-title').innerText = data.collection.items[0].data[0].title;
+            document.querySelector('#nivl-img').src = data.collection.items[0].links[0].href
             // document.querySelector('#apod-img').src = data.hdurl
             // document.querySelector('#apod-description').innerText = data.explanation
             // document.querySelector('.apod').classList.toggle('hidden');
