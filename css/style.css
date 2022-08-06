@@ -33,6 +33,8 @@ h1 {
 
 h2, p, form {
   padding: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
   font-size: 1.6rem;
   text-align: center;
 }
@@ -49,7 +51,9 @@ form {
   padding-left: 5%;
 }
 
-
+label {
+  font-size: 1.6rem;
+}
 .hidden {
   display: none;
 }
@@ -103,11 +107,17 @@ ul {
 }
 
  li {
-  padding: 1.5%;
+  padding: 0.5%;
+  margin: 0.75%;
   font-size: 1.6rem;
   display: inline-block;
   list-style: none;
   height: 100%;
+  border-bottom: transparent 3px solid;
+}
+
+li:hover {
+ border-bottom: #1058DB 4px solid;
 }
 
 /* APOD SECTION */
