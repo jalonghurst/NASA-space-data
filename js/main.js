@@ -7,7 +7,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
     if(data.media_type === 'image') {
     document.querySelector('#title').innerText = data.title
     document.querySelector('#apod-img').src = data.hdurl
-    document.querySelector('#apod-description').innerText = data.explanation
+    document.querySelector('#apod-description').innerText =  "Description: " + data.explanation
     document.querySelector('.apod').classList.toggle('hidden');
         document.querySelector('.apod-video').classList.add('hidden');
     } else if (data.media_type === 'video') {
@@ -35,7 +35,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
             if(data.media_type === 'image') {
             document.querySelector('#title').innerText = data.title
             document.querySelector('#apod-img').src = data.hdurl
-            document.querySelector('#apod-description').innerText = data.explanation
+            document.querySelector('#apod-description').innerText = "Description: " + data.explanation
             document.querySelector('.apod').classList.toggle('hidden');
                 document.querySelector('.apod-video').classList.add('hidden');
             } else if (data.media_type === 'video') {
@@ -122,6 +122,7 @@ document.querySelector('#hivl-button').addEventListener('click', getFetchNivl)
                 // FIND RIGHT TARGET FOR TITLE
             document.querySelector('#nivl-title').innerText = data.collection.items[0].data[0].title;
             document.querySelector('#nivl-img').src = data.collection.items[0].links[0].href
+            document.querySelector('#nivl-description').innerText = "Description: " + data.collection.items[0].data[0].description
             // document.querySelector('#apod-img').src = data.hdurl
             // document.querySelector('#apod-description').innerText = data.explanation
             // document.querySelector('.apod').classList.toggle('hidden');
