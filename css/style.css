@@ -5,8 +5,11 @@
 /* Box Model Hack */
 *{
   box-sizing: border-box;
-  font-family: 'Ramabhadra', sans-serif;
-  font-weight: lighter;
+  /* font-family: 'Alata', sans-serif; */
+font-family: 'Archivo', sans-serif;
+/* font-family: 'Outfit', sans-serif; */
+/* font-family: 'Ramabhadra', sans-serif; */
+  /* font-weight: lighter; */
  
   margin: 0 auto;
   padding: 0;
