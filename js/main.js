@@ -6,9 +6,10 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
     console.log(data)
     
     document.querySelector('#title').innerText = data.title
-    document.querySelector('#apod-img').src = data.hdurl
+    document.querySelector('#apod-date').innerText = "Date: " + data.date
     document.querySelector('#apod-description').innerText =  "Description: " + data.explanation
     if(data.media_type === 'image') {
+        document.querySelector('#apod-img').src = data.hdurl
         document.querySelector('.apod').classList.toggle('hidden');
         document.querySelector('.apod-video').classList.add('hidden');
     } else if (data.media_type === 'video') {
@@ -37,6 +38,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
             document.querySelector('#title').innerText = data.title
             document.querySelector('#apod-img').src = data.hdurl
             document.querySelector('#apod-description').innerText = "Description: " + data.explanation
+            document.querySelector('#apod-date').innerText = "Date: " + data.date
             document.querySelector('.apod').classList.toggle('hidden');
                 document.querySelector('.apod-video').classList.add('hidden');
             } else if (data.media_type === 'video') {
@@ -108,18 +110,33 @@ document.querySelector("#mr-button").addEventListener("click", function() {
 
 // NASA Image And Video Library
 
+fetch(`https://images-api.nasa.gov/search?q=beautiful`)
+.then (res => res.json())
+.then(data => {
+    console.log(data)
+    document.querySelector('.nivl-img').src = data.collection.items[0].links[0].href
+    document.querySelector('.nivl-img').classList.toggle('hidden');
+    document.querySelector('#nivl-title').innerText = data.collection.items[0].data[0].title;
+    document.querySelector('#nivl-date-created').innerText = "Date Created: " + data.collection.items[0].data[0].date_created
+    document.querySelector('#nivl-media-type').innerText = "Media Type: " + data.collection.items[0].data[0].media_type
+    document.querySelector('#nivl-keywords').innerText = "Keywords: " + data.collection.items[0].data[0].keywords
+    document.querySelector('#nivl-description').innerText = "Description: " + data.collection.items[0].data[0].description
+})
+.catch(err => {
+    console.log(`error ${err}`)
+});
+
+
 document.querySelector('#hivl-button').addEventListener('click', getFetchNivl)
 
  function getFetchNivl() {
     const search = document.querySelector('#search').value
     console.log(search)
-    const url = `https://images-api.nasa.gov/search?q=${search}`
-    
+    const url = `https://images-api.nasa.gov/search?q=${search}` 
     fetch(url)
         .then (res => res.json())
         .then(data => {
             console.log(data)
-            
             document.querySelector('#nivl-title').innerText = data.collection.items[0].data[0].title;
             document.querySelector('#nivl-date-created').innerText = "Date Created: " + data.collection.items[0].data[0].date_created
             document.querySelector('#nivl-media-type').innerText = "Media Type: " + data.collection.items[0].data[0].media_type

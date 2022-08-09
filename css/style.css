@@ -150,14 +150,14 @@ a:visited {
   font-size: 1.5rem;
   font-weight: 400;
   border-radius: 5px;;
-  background-color: #1058DB;
+  background-color: #243B55;
   border: none;
   outline: none;
   color: #eef0f3;
 }
 
-#apod-description, #mr-description, #nivl-description {
- padding-top: 5%;
+#apod-description, #mr-description,  #apod-date {
+ padding-top: 4%;
   width: 90%;
   text-align: justify;
   font-size: 1.5rem; 
