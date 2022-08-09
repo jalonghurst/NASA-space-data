@@ -4,11 +4,12 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
 .then (res => res.json())
 .then(data => {
     console.log(data)
-    if(data.media_type === 'image') {
+    
     document.querySelector('#title').innerText = data.title
     document.querySelector('#apod-img').src = data.hdurl
     document.querySelector('#apod-description').innerText =  "Description: " + data.explanation
-    document.querySelector('.apod').classList.toggle('hidden');
+    if(data.media_type === 'image') {
+        document.querySelector('.apod').classList.toggle('hidden');
         document.querySelector('.apod-video').classList.add('hidden');
     } else if (data.media_type === 'video') {
         document.querySelector('iframe').src = data.url
@@ -118,21 +119,25 @@ document.querySelector('#hivl-button').addEventListener('click', getFetchNivl)
         .then (res => res.json())
         .then(data => {
             console.log(data)
-            // if(data.media_type === 'image') {
+            
             document.querySelector('#nivl-title').innerText = data.collection.items[0].data[0].title;
-            document.querySelector('#nivl-img').src = data.collection.items[0].links[0].href
             document.querySelector('#nivl-date-created').innerText = "Date Created: " + data.collection.items[0].data[0].date_created
+            document.querySelector('#nivl-media-type').innerText = "Media Type: " + data.collection.items[0].data[0].media_type
+            document.querySelector('#nivl-keywords').innerText = "Keywords: " + data.collection.items[0].data[0].keywords
             document.querySelector('#nivl-description').innerText = "Description: " + data.collection.items[0].data[0].description
-            // document.querySelector('#apod-img').src = data.hdurl
-            // document.querySelector('#apod-description').innerText = data.explanation
-            // document.querySelector('.apod').classList.toggle('hidden');
-            //     document.querySelector('.apod-video').classList.add('hidden');
-            // } 
-            // else if (data.media_type === 'video') {
-            //     document.querySelector('iframe').src = data.url
-            //     document.querySelector('.apod').classList.add('hidden');
-            //     document.querySelector('.apod-video').classList.toggle('hidden');
-            // }
+            // document.querySelector('#nivl-img').src = data.collection.items[0].links[0].href
+            // document.querySelector('#nivl-video').src = data.collection.items[0].links[0].href
+            
+            if(data.collection.items[0].data[0].media_type === 'image') {
+            document.querySelector('.nivl-img').src = data.collection.items[0].links[0].href
+            document.querySelector('.nivl-img').classList.toggle('hidden');
+            document.querySelector('.nivl-video').classList.add('hidden');
+            } 
+            else if (data.collection.items[0].data[0].media_type === 'video') {
+                document.querySelector('.nivl-video').src = data.collection.items[0].links[0].href
+                document.querySelector('.nivl-img').classList.add('hidden');
+                document.querySelector('.nivl-video').classList.toggle('hidden');
+            }
         })
         .catch(err => {
             console.log(`error ${err}`)
