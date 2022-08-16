@@ -118,13 +118,22 @@ ul {
   border-bottom: transparent 3px solid;
 }
 
+.active {
+  background-color: #243B55;  
+  transition: background-color 0.4s;
+  border-radius: 10px;
+  padding: 1.5%;
+  color: white;
+  font-weight: 600;
+}
+
 li:hover {
  border-bottom: #1058DB 4px solid;
 }
 
 a:visited {
   text-decoration: none;
-  color: black;
+  /* color: black; */
 }
 
 /* APOD SECTION */
@@ -217,11 +226,16 @@ a:visited {
 @media (min-width: 800px) {
   img {
     max-width: 1500px;
-  }
+  }  
+.active {
+  padding: 0.6%;
+
+}
 }
 
 @media (max-width: 800px) {
   h3  {
     font-size: 3rem;
   }
+
 }
