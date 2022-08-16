@@ -170,7 +170,7 @@ a:visited {
   color: #eef0f3;
 }
 
-#apod-description, #mr-description,  #apod-date {
+#apod-description, #mr-description,  #apod-date, .nivl-info  {
  padding: 2%;
   width: 90%;
   text-align: justify;
@@ -266,3 +266,17 @@ p {
   }
 
 }
+
+
+@media (max-width: 400px) {
+  h3  {
+    font-size: 2.5rem;
+  }
+  .card {
+   max-width: 20px;
+}
+a:visited {
+  color: black;
+}
+}
+
