@@ -5,7 +5,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
 .then(data => {
     console.log(data)
     
-    document.querySelector('#title').innerText = data.title
+    document.querySelector('#apod-title').innerText = data.title
     document.querySelector('#apod-date').innerText = "Date: " + data.date
     document.querySelector('#apod-description').innerText =  "Description: " + data.explanation
     if(data.media_type === 'image') {
@@ -91,7 +91,7 @@ document.querySelector("#mr-button").addEventListener("click", function() {
         let roverName = data.photos[0].rover.name;
         let text = `The image below was taken by the ${cameraName} on the ${roverName} rover on Martian sol ${sol}.`;
         console.log(data.status);
-        // document.querySelector('#title').innerText = data.title
+        // document.querySelector('#mr-title').innerText = data.title
         
         document.querySelector("#mr-img").src = image;
         document.querySelector('.mr').classList.toggle('hidden');

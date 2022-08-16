@@ -64,12 +64,13 @@ label {
 /******************************************
 /* LAYOUT / SECTIONS
 /*******************************************/
+
 .white-card {
   background: -webkit-linear-gradient(to right, #eef0f3, #fbfdff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #fdfeff, #fbfcfd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
   width: 100%;
   overflow: hidden;
-  padding-top: 5%;
+  padding-top: 0%;
   padding-bottom: 5%;
 }
 
@@ -116,6 +117,7 @@ ul {
   list-style: none;
   height: 100%;
   border-bottom: transparent 3px solid;
+
 }
 
 .active {
@@ -151,8 +153,8 @@ a:visited {
   
 }
 
-#title{
-  padding: 5%;
+.title{
+  padding: 4%;
   font-size: 2rem;
 }
 
@@ -169,10 +171,11 @@ a:visited {
 }
 
 #apod-description, #mr-description,  #apod-date {
- padding-top: 4%;
+ padding: 2%;
   width: 90%;
   text-align: justify;
   font-size: 1.5rem; 
+ 
 
 }
 
@@ -192,7 +195,7 @@ a:visited {
 }
 
 .card {
-  width: 50px;
+  max-width: 40px;
   height: 80%;
   background: #141E30;
   position: relative;
@@ -204,6 +207,7 @@ a:visited {
 .card-txt {
   padding: 200%;
   font-size: 5rem;
+  
 }
 
 /* NASA IMAGE AND VIDEO LIBRARY */
@@ -223,12 +227,35 @@ a:visited {
 /******************************************
 /* ADDITIONAL STYLES/ MEDIA QUERIES
 /*******************************************/
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   img {
     max-width: 1500px;
   }  
 .active {
   padding: 0.6%;
+}
+
+.blue-card {
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+.white-card {
+  padding-bottom: 0%;
+  padding-top: 0%;
+}
+
+.title{
+  padding: 2%;
+  font-size: 2rem;
+}
+#apod-date {
+  padding-bottom: 0;
+}
+
+p {
+  padding-top: 1%;
+  padding-bottom: 1%;
 
 }
 }

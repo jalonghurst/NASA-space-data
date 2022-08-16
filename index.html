@@ -4,7 +4,7 @@
     	<meta charset="utf-8">
     	<meta name="description" content="A user interface providing data accessed from NASAs extensive database through public APIs">
     	<meta name="keywords" content="NASA, Space, API">
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>NASA Space Data Generator</title>
 
 		<!-- external CSS link -->
@@ -43,7 +43,7 @@
 			</section>
         <section class="white-card">
 			
-			<h2 id="title"></h2>
+			<h2 id="apod-title" class='title'></h2>
 			<img id='apod-img' class="apod hidden" src="" alt="">
 			<iframe class="apod-video hidden" src="" frameborder="0" width="100%" height="500px"></iframe>
 			<h3 id="apod-date"></h3>
@@ -79,7 +79,7 @@
 		<!-- Mars Rover Form -->
 		<section class="white-card">
 			
-			<h2 id="title"></h2>
+			<h2 id="mr-title"></h2>
 		
 			<img id='mr-img' class="mr hidden" src="" alt="">
 			<!-- <iframe class="apod-video hidden" src="" frameborder="0" width="100%" height="500px"></iframe> -->
@@ -105,14 +105,13 @@
 
 		<section class="white-card">
 			
-			<h2 id="nivl-title"></h2>
-			
+			<h2 id="nivl-title" class="title"></h2>
 			<img class='nivl-img hidden'  src="" alt="">
 			<iframe class="nivl-video hidden" src="" frameborder="0" width="100%" height="500px"></iframe>
-			<h2 id="nivl-date-created"></h2>
-			<h2 id="nivl-media-type"></h2>
-			<h2 id="nivl-keywords"></h2>
-			<h2 id="nivl-description"></h2>
+			<p id="nivl-date-created"></p>
+			<p id="nivl-media-type"></p>
+			<p id="nivl-keywords"></p>
+			<p id="nivl-description"></p>
 		</section>
 	<script type="text/javascript" src="js/main.js"></script>
 	</body>
