@@ -267,6 +267,13 @@ p {
 
 }
 
+@media (max-width: 600px) {
+  input, button  {
+    padding: 2%;
+  }
+
+}
+
 
 @media (max-width: 400px) {
   h3  {
