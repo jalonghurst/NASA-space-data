@@ -57,6 +57,34 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtO
 
 
 // Mars Rover API 
+
+// Placeholder entry
+
+const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2022-08-02&api_key=FOfTEcZgUmamN5Rc9EQwHTeOw0VtOULzadunDcHT`;
+    fetch(url)
+    .then (res => res.json())
+    .then(data => {
+        let image = data.photos[0].img_src;
+        let text = `The image below was taken by the Front Hazard Avoidance Camera  on the Curiosity rover on Martian sol 3551.`;
+        console.log(data.status);
+        // document.querySelector('#mr-title').innerText = data.title
+        
+        document.querySelector("#mr-img").src = image;
+        document.querySelector('.mr').classList.toggle('hidden');
+        document.querySelector("#mr-description").innerHTML = text;
+        // document.querySelector('.apod').classList.toggle('hidden');
+        // document.querySelector('.apod-video').classList.add('hidden'); 
+    })
+    .catch(err => {
+        let error = "Sorry, there are no photos avaliable on this date! Pick another.";
+        document.querySelector("#mr-description").innerHTML = error;
+        document.querySelector('.mr').classList.add('hidden');
+        console.log(`error ${err}`)
+    });
+
+
+//   Form results
+
 document.querySelector("#mr-button").addEventListener("click", function() {
     let datePicker = document.getElementById("mr-date");
     let date = datePicker.value;
@@ -94,7 +122,7 @@ document.querySelector("#mr-button").addEventListener("click", function() {
         let text = `The image below was taken by the ${cameraName} on the ${roverName} rover on Martian sol ${sol}.`;
         console.log(data.status);
         // document.querySelector('#mr-title').innerText = data.title
-        
+        document.querySelector('.mr').classList.add('hidden');
         document.querySelector("#mr-img").src = image;
         document.querySelector('.mr').classList.toggle('hidden');
         document.querySelector("#mr-description").innerHTML = text;
@@ -112,7 +140,7 @@ document.querySelector("#mr-button").addEventListener("click", function() {
 
 // NASA Image And Video Library
 
-fetch(`https://images-api.nasa.gov/search?q=beautiful`)
+fetch(`https://images-api.nasa.gov/search?q=minas`)
 .then (res => res.json())
 .then(data => {
     console.log(data)

@@ -249,6 +249,18 @@ a:visited {
   padding: 2%;
   font-size: 2rem;
 }
+.nivl-info {
+  padding-top: 1%;
+  padding-bottom: 1%;;
+}
+
+#apod-description, #mr-description,  #apod-date, .nivl-info  {
+  padding-left: 0;
+  padding-left: 0;
+ width: 79%;
+  
+ 
+ }
 #apod-date {
   padding-bottom: 0;
 }
@@ -281,6 +293,7 @@ p {
   h3  {
     font-size: 2.5rem;
   }
+
   .card {
    max-width: 20px;
 }
