@@ -140,7 +140,7 @@ document.querySelector("#mr-button").addEventListener("click", function() {
 
 // NASA Image And Video Library
 
-fetch(`https://images-api.nasa.gov/search?q=minas`)
+fetch(`https://images-api.nasa.gov/search?q=gemstone`)
 .then (res => res.json())
 .then(data => {
     console.log(data)

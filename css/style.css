@@ -117,7 +117,7 @@ ul {
   list-style: none;
   height: 100%;
   border-bottom: transparent 3px solid;
-
+  font-weight: 400;
 }
 
 .active {
@@ -296,6 +296,9 @@ p {
 
   .card {
    max-width: 20px;
+}
+.card-txt {
+  font-size: 4rem;
 }
 
 }
