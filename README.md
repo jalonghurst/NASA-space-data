@@ -1,4 +1,5 @@
 # NASA-space-data 
+Fetches and displays space data from various NASA sourced APIs
 
 Features: Astronomy Picture of the Day. 
 NASA API endpoint. 
